@@ -14,30 +14,32 @@ const TheTeam = () => {
        </div>
 
        <div className='flex flex-col lg:flex-row gap-3'>
-       <div className=''>
+       <div className='relative'>
         <img src={john}alt='john' className='w-full'/>
-        <div className='absolute  text-[#FFFFFF]'>
+        <div className='absolute inset-0 flex flex-col items-center justify-end text-center text-[#FFFFFF] rounded-2xl p-6'>
         <h1 className='text-xl '>Priscilla John</h1>
-        {/* <h1 className='text-xl'>C.E.O</h1> */}
+        <h2 className='text-xl'>C.E.O</h2>
         </div>
        </div>
 
-       <div>
+       
+       <div className='relative'>
         <img src={issac}alt='issac' className='w-full'/>
-       </div>
-       <div className=''>
-        {/* <h1 className='text-xl '>Gabriel Isaac</h1> */}
-        {/* <h1 className='text-xl'>C.O.O</h1> */}
+       <div className='absolute inset-0 flex flex-col items-center justify-end text-center text-[#FFFFFF] rounded-2xl p-6'>
+        <h1 className='text-xl '>Gabriel Isaac</h1>
+        <h2 className='text-xl'>C.O.O</h2>
         </div>
-       <div>
+</div>
+      
+<div className='relative'>
         <img src={gina}alt='gina' className='w-full'/>
-       </div>
-       <div className=''>
-        {/* <h1 className='text-xl '>Gina Konsworth</h1> */}
-        {/* <h1 className='text-xl'>Marketing Manager</h1> */}
+        <div className='absolute inset-0 flex flex-col items-center justify-end text-center text-[#FFFFFF] rounded-2xl p-6'>
+        <h2 className='text-xl '>Gina Konsworth</h2>
+        <h2 className='text-xl'>Marketing Manager</h2>
         </div>
        </div>
 
+</div>
     </div>
     </Wrapper>
   )

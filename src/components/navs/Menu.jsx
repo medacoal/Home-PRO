@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import { GiHamburgerMenu } from "react-icons/gi";
-import Logo from "../../assets/icons/home.png";
+import Logo from "../../assets/icons/Homepro.png";
+// import images from '../../assets//images/Vector (1).png'
 import { Link, NavLink } from "react-router-dom";
-import ComponentWrapper from "../resusables/ComponentWrapper";
+import Wrapper from "../resusables/ComponentWrapper";
+import { useModal } from "../context/ModalContext";
+import AuthForm from "../../pages/auth/AuthForm";
+
 const Menu = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { openModal } = useModal();
 
   const onToggleMenu = () => {
     setMenuOpen((prev) => !prev);
@@ -15,27 +20,31 @@ const Menu = () => {
     setMenuOpen(false);
   };
 
+  const handleOpenModal = () => {
+    openModal(<AuthForm />); 
+  };
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 font-inter">
-      <ComponentWrapper>
-        <nav className="flex justify-between items-center h-24 md:h-[7rem] lg:container shadow-lg md:shadow-none">
+    <header className="fixed top-0 left-0 right-0 z-50  bg-[#F8F3DD]">
+      <Wrapper className="bg-hero ">
+        <nav className="flex  justify-between items-center md:h-[8rem]">
           <Link to="/" className="flex items-baseline text-primary">
-            <img className="w-[48px] cursor-pointer" src={Logo} alt="Logo" />
-            <b className="text-bold ml-2 font-pacifico">HomePro</b>
+            <img className=" cursor-pointer" src={Logo} alt="logo" />
+            <b className="text-bold ml-2 font-pacifico"></b>
           </Link>
           <div
             onMouseLeave={onCloseMenu}
             className={`duration-500 md:static absolute top-0 left-0 w-full ${
-              menuOpen ? "block top-[100%]" : "hidden top-[12%]"
+              menuOpen ? "block top-[100%]  bg-[#F8F3DD]" : "hidden top-[12%]"
             } md:flex md:items-center md:w-auto min-h-fit flex-col md:flex-row`}
           >
-            <ul className="flex md:flex-row flex-col md:items-center lg:gap-[4vw] gap-8 md:gap-5 font-bold text-neutral-grey-300 py-2 pl-4 md:pl-0">
+            <ul className="flex md:flex-row flex-col md:items-center gap-8 md:gap-5 lg:gap-8 font-bold text-neutral-grey-300 md:pl-0 px-5">
               <li>
                 <NavLink
                   to="/"
                   className={({ isActive }) =>
-                    `hover:border-b border-b-primary hover:text-primary py-2 transition-all duration-300 ${
-                      isActive ? "text-primary border-b-primary border-b-2" : "text-dark"
+                    `hover:border-b border-custom-green hover:text-custom-green py-2 transition-all duration-300 ${
+                      isActive ? "text-black border-b-primary border-b-2" : "text-black"
                     }`
                   }
                 >
@@ -44,10 +53,10 @@ const Menu = () => {
               </li>
               <li>
                 <NavLink
-                  to="/about"
+                  to="/aboutus"
                   className={({ isActive }) =>
-                    `hover:border-b border-b-primary hover:text-primary py-2 transition-all duration-300 ${
-                      isActive ? "text-primary border-b-primary border-b-2" : "text-dark"
+                    `hover:border-b border-custom-green hover:text-custom-green py-2 transition-all duration-300 ${
+                      isActive ? "text-black border-b-primary border-b-2" : "text-black"
                     }`
                   }
                 >
@@ -58,8 +67,8 @@ const Menu = () => {
                 <NavLink
                   to="/listings"
                   className={({ isActive }) =>
-                    `hover:border-b border-b-primary hover:text-primary py-2 transition-all duration-300 ${
-                      isActive ? "text-primary border-b-primary border-b-2" : "text-dark"
+                    `hover:border-b border-custom-green hover:text-custom-green py-2 transition-all duration-300 ${
+                      isActive ? "text-black border-b-primary border-b-2" : "text-black"
                     }`
                   }
                 >
@@ -70,8 +79,8 @@ const Menu = () => {
                 <NavLink
                   to="/blog"
                   className={({ isActive }) =>
-                    `hover:border-b border-b-primary hover:text-primary py-2 transition-all duration-300 ${
-                      isActive ? "text-primary border-b-primary border-b-2" : "text-dark"
+                    `hover:border-b border-custom-green hover:text-custom-green py-2 transition-all duration-300 ${
+                      isActive ? "text-black border-b-primary border-b-2" : "text-black"
                     }`
                   }
                 >
@@ -82,8 +91,8 @@ const Menu = () => {
                 <NavLink
                   to="/contact"
                   className={({ isActive }) =>
-                    `hover:border-b border-b-primary hover:text-primary py-2 transition-all duration-300 ${
-                      isActive ? "text-primary border-b-primary border-b-2" : "text-dark"
+                    `hover:border-b border-b-primary hover:text-custom-green py-2 transition-all duration-300 ${
+                      isActive ? "text-black border-custom-green border-b-2" : "text-black"
                     }`
                   }
                 >
@@ -91,25 +100,25 @@ const Menu = () => {
                 </NavLink>
               </li>
               <div className="md:hidden flex gap-5 mb-8">
-                <button className="md:block text-primary px-4 py-2 rounded-full border border-primary hover:text-secondary hover:bg-primary font-medium text-sm transition-all ease-in-out duration-300">
+                <Link onClick={handleOpenModal} className="md:block  px-6 py-2 rounded-full border border-custom-green hover:text-custom-green font-medium text-sm transition-all ease-in-out duration-300">
                   Get Started
-                </button>
+                </Link>
               </div>
             </ul>
           </div>
           <div className="flex items-center">
-            <button className="hidden md:block text-primary px-4 py-2 rounded-full border border-primary hover:text-secondary hover:bg-primary font-medium text-sm transition-all ease-in-out duration-300">
+            <Link onClick={handleOpenModal} className="hidden md:block  px-4 py-2 rounded-full border border-custom-green hover:text-custom-green font-medium text-sm transition-all ease-in-out duration-300">
               Get Started
-            </button>
+            </Link>
             <div
               onClick={onToggleMenu}
-              className="text-2xl cursor-pointer text-primary md:hidden"
+              className="text-2xl cursor-pointer text-custom-green md:hidden"
             >
-              {menuOpen ? <IoMdClose /> : <GiHamburgerMenu />}
+              {menuOpen ? <IoMdClose  className="text-3xl"/> : <GiHamburgerMenu className="text-3xl"/>}
             </div>
           </div>
         </nav>
-      </ComponentWrapper>
+      </Wrapper>
     </header>
   );
 };

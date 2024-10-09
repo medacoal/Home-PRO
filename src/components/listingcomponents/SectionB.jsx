@@ -8,7 +8,7 @@ const SectionB = () => {
   <Wrapper>
       <div className=''>
         <form className=''>
-        <div className="space-y-6 py-10 px-6 bg-slate-200 rounded-2xl ">
+        <div className="space-y-8 py-12 px-4 bg-slate-200 rounded-2xl ">
                     <div className='rounded-md '>
                         <select id="location" className="mt-1 block w-full  text-lg border border-gray-300 rounded-xl bg-slate-100 shadow-sm">
                             <option value="city1">Location</option>

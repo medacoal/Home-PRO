@@ -4,38 +4,26 @@ import FeaturedProperty from '../components/featuredProperties'
 import Howitworks from '../components/Howitworks'
 import Listings from '../components/Listings'
 import Agent from '../components/Agent'
-import LatestNews from '../components/latestNews'
 import TestimonialWrapper from "../components/TestimonialWrapper"
+import Testimonials from '../components/Testimonials'
 import Ready from "../components/Ready"
 import Footer from "../components/layout/Footer";
+import LatestNews from '../components/latestNews'
+
 const Home = () => {
   return (
     <div>
+    <div className="md:mt-32 mt-14">
     <Hero />
-    <div className="my-16">
     <FeaturedProperty />
     </div>
-    <div className="mt-16">
         <Howitworks />
-      </div>
-      <div className="mt-16">
         <Listings/>
-      </div>
-      <div className="mt-16" >
         <Agent/>
-      </div>
-      <div className="mt-16">
         <LatestNews/>
-      </div>
-      <div className="mt-16">
         <TestimonialWrapper/>
-      </div>
-      <div className="my-16">
         <Ready/>
-      </div>
-      <div className="">
         <Footer/>
-      </div>
     </div>
   );
 };
