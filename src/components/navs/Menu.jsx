@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import { GiHamburgerMenu } from "react-icons/gi";
-import Logo from "../../assets/icons/Homepro.png";
+import Logo from "../../assets/icons/Frame 4.png";
 // import images from '../../assets//images/Vector (1).png'
 import { Link, NavLink } from "react-router-dom";
 import Wrapper from "../resusables/ComponentWrapper";
