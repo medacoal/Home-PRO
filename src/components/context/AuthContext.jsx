@@ -64,7 +64,7 @@ const AuthProvider = ({ children }) => {
   // Signup function
   const signup = async (formData) => {
     try {
-      const { data } = await axios.post("/auth/register", {...formData}, {
+      const { data } = await axios.post("/register", {...formData}, {
         headers: {
           'Content-Type': 'application/json',
         },
@@ -77,7 +77,7 @@ const AuthProvider = ({ children }) => {
         });
 
         // Save signup data to local storage
-        localStorage.setItem("auth", JSON.stringify(data));
+        // localStorage.setItem("auth", JSON.stringify(data));
       }
 
       return data;

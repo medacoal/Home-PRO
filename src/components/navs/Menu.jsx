@@ -53,7 +53,7 @@ const Menu = () => {
               </li>
               <li>
                 <NavLink
-                  to="/aboutus"
+                  to="/about"
                   className={({ isActive }) =>
                     `hover:border-b border-custom-green hover:text-custom-green py-2 transition-all duration-300 ${
                       isActive ? "text-black border-b-primary border-b-2" : "text-black"
